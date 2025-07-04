@@ -1,0 +1,204 @@
+/* Updated Contact CSS with Dark Mode Support */
+.contact-page {
+  padding: 0;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.contact-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.contact-info {
+  flex: 1;
+  color: var(--text-color);
+}
+
+.contact-info h1 {
+  color: var(--heading-color);
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  transition: color 0.3s ease;
+}
+
+.contact-info h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.contact-info p {
+  margin-bottom: 30px;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.contact-details {
+  margin-top: 40px;
+}
+
+.contact-item {
+  margin-bottom: 30px;
+}
+
+.contact-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.contact-item p {
+  margin-bottom: 5px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: var(--text-color);
+  transition: var(--transition);
+  font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.contact-form {
+  flex: 1;
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+}
+
+.contact-form h2 {
+  color: var(--heading-color);
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.contact-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--focus-shadow);
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:active {
+  transform: translateY(-1px);
+}
+
+.success-message {
+  background-color: var(--success-color);
+  color: var(--white);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 20px;
+  }
+  
+  .contact-info, .contact-form {
+    flex: none;
+    width: 100%;
+  }
+  
+  .contact-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-container {
+    padding: 20px 15px;
+  }
+  
+  .contact-form {
+    padding: 20px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+}

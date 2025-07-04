@@ -1,0 +1,109 @@
+/* project.css */
+.projects-page {
+  padding: 0;
+  color: var(--text-color); /* Base text color for the page */
+}
+
+.projects-page h1 {
+  text-align: center;
+  color: var(--text-color); /* Changed from dark-color to text-color */
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.projects-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.projects-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: var(--text-light);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Project card styling - add this for better theme support */
+.project-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.project-tags span {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 10px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 60px 0;
+  }
+  
+  .projects-intro {
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+}

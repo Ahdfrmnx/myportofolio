@@ -1,0 +1,301 @@
+/* Home Page Styles with Dark Mode Support */
+.hero-section {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  padding-left: 100px;
+  color: var(--heading-color);
+}
+
+.hero-content h1 span {
+  color: var(--primary-color);
+}
+
+.hero-content h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: var(--text-light);
+  padding-left: 105px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 30px;
+  padding-left: 105px;
+  color: var(--text-color);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  padding-left: 105px;
+}
+
+.hero-buttons .btn {
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: 2px solid var(--primary-color);
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.hero-buttons .btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.hero-buttons .btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 350px;
+  height: 450px;
+  background: url('../../assets/img/pas-foto.jpg') center/cover no-repeat;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    transparent,
+    transparent,
+    transparent,
+    var(--highlight-color)
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(30deg) translate(-30%, -30%);
+  }
+  100% {
+    transform: rotate(30deg) translate(30%, 30%);
+  }
+}
+
+/* Skills Section with Dark Mode */
+.skills-section {
+  padding: 80px 0;
+  background-color: var(--section-bg);
+  transition: all 0.3s ease;
+}
+
+.skills-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  color: var(--heading-color);
+}
+
+.skills-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: var(--icon-filter);
+}
+
+.react-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+PHBhdGggZmlsbD0iIzYxREFGIiBkPSJNMTIgMmM1LjUxNCAwIDEwIDQuNDg2IDEwIDEwcy00LjQ4NiAxMC0xMCAxMFMyIDE3LjUxNCAyIDEyIDYuNDg2IDIgMTIgMnptMCAyYy00LjQxMSAwLTggMy41ODktOCA4czMuNTg5IDggOCA4IDgtMy41ODkgOC04LTMuNTg5LTgtOC04eiIvPjxwYXRoIGZpbGw9IiM2MURBRiIgZD0iTTEyIDVjLTMuODY2IDAtNyAxLjU0LTcgMy41IDAgMS4wNzEgMS45MTUgMi4wMDIgNSAyaDZjMy4wODUtLjAwMiA1LS45MjkgNS0yIDAtMS45Ni0zLjEzNC0zLjUtNy0zLjV6Ii8+PHBhdGggZmlsbD0iIzYxREFGIiBkPSJNMTIgMTNjLTMuODY2IDAtNy0xLjU0LTctMy41IDAtMS4wNzEgMS45MTUtMi4wMDIgNS0yaDZjMy4wODUuMDAyIDUuOTI5IDUgMiAwIDEuOTYtMy4xMzQgMy41LTcgMy41eiIvPjwvc3ZnPg==');
+}
+
+.js-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj48cGF0aCBmaWxsPSIjRkRCNDAwIiBkPSJNMCwwaDI0MHYyNDBIMHoiLz48cGF0aCBmaWxsPSIjMjYyNjI2IiBkPSJNNDcuMjQyIDIxMS4wOTJjLTExLjE5IDAtMTguNDI3LTYuMDM4LTIxLjk3Ni0xNC4xMjVsMTYuNDE2LTcuMjc1YzIuMjIgNC43MzUgNS4xMyA4LjI0IDkuNDYgOC4yNCA0LjA0IDAgNi42MzQtMi4wMiA2LjYzNC02LjQ0di00OS4zOGgxMC42NXY0OS41OGMwIDEwLjU1LTYuMDQgMTkuMDItMTkuMTkgMTkuMDJNMTI0LjE0MyAyMTEuMDkyYy0xMC4xNSAwLTE3LjQxLTQuNzM1LTIwLjU4LTEyLjEybDE2LjYxNi03LjQ1YzIuMjIgNC4xNCA0LjczNSA3LjE0NSA5LjQ2IDcuMTQ1IDMuOTMgMCA2LjQzLTEuNTYgNi40My01LjEzIDAtMy40NS0yLjUyLTUuMTItMTEuMTktOC44NS0xMy4xOS01LjEzLTIxLjk3Ni0xMS42OC0yMS45NzYtMjQuMDQgMC0xMS42OCA4Ljg0LTIwLjU4IDIxLjQ3Ni0yMC41OCA5LjY2IDAgMTYuNjE2IDMuMjUgMjEuNjE2IDExLjY4bC0xNS44MyA5LjY2Yy0yLjUyLTQuNTQtNS40My03LjE0NS05Ljg2LTcuMTQ1LTQuNTQgMC03LjQ1IDIuODItNy40NSA1Ljg0IDAgMy45MyAyLjgyIDUuNTQgMTEuODkgOC44NSAxNi4yMSA2LjAzIDI0LjAzIDEyLjU4IDI0LjAzIDI1LjA0IDAgMTMuNjEtMTAuMjUgMjIuMTItMjQuOTQgMjIuMTJNMTk5LjY5MyAyMTEuMDkyYy0xMS44OSAwLTE5LjQyLTUuMTMtMjMuNTQtMTQuMTJsMTYuODEtNy4xNDVjMi44MiA1LjEzIDYuNDQgOC4yNCAxMS4xOSA4LjI0IDQuNzM1IDAgNy44NS0yLjMyIDcuODUtOC44NVYxMjdoMTAuNjV2NjMuNTdjMCAxNC4xMi04LjI0IDIwLjUyLTIxLjk2IDIwLjUyeiIvPjwvc3ZnPg==');
+}
+
+.html-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48cGF0aCBmaWxsPSIjRTQ0RDM1IiBkPSJNMCAzMmgzODR2NDQ4SDMxMmwtMjYtMzJIMTU0bDI2IDMySDBWMzJ6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MS4xIDcySDQ0djM2OGgxMTcuMVYzOTdoMTYuN1Y3MnptMTYuNyAwSDE2MXYzNjhoMTcuOFY3MnoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTQ0LjIgMjA5LjFIMTAydjE2LjZoMzYuNXYxNi42SDEwMnYxNi42aDQyLjJ2MTYuNkg4NS40di01MC4yaDU4Ljh2MTYuNnptNDkuNy0xNi42aC0xNi42djUwLjJoMTYuNnYtMTkuOWgyNi4xdjE5LjloMTYuNnYtNTAuMmgtMTYuNnYxNi42aC0yNi4xdi0xNi42eiIvPjwvc3ZnPg==');
+}
+
+.css-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48cGF0aCBmaWxsPSIjMjE3MkI2IiBkPSJNMCAzMmgzODR2NDQ4SDMxMmwtMjYtMzJIMTU0bDI2IDMySDBWMzJ6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MS4xIDcySDQ0djM2OGgxMTcuMVYzOTdoMTYuN1Y3MnptMTYuNyAwSDE2MXYzNjhoMTcuOFY3MnoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTgwLjQgMjA5LjFoLTQyLjJ2MTYuNmg0Mi4ydjE2LjZIMTAydjE2LjZoNzguNHYtMTYuNkgxMzQuM3YtMTYuNmg0Ni4xdi0xNi42eiIvPjwvc3ZnPg==');
+}
+
+.git-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjRjAzZDMxIiBkPSJNNDM5LjUgMjM2LjVMMjExLjUgOC41Yy0xMS4zLTEwLjktMjkuNS0xMC45LTQwLjggMEw4LjUgMjM2LjVjLTExLjMgMTAuOS0xMS4zIDI4LjcgMCAzOS42bDIwOCAxOTljNS42IDUuMyAxMy4xIDggMjAuNSA4czE0LjktMi43IDIwLjUtOGwyMDgtMTk5YzExLjMtMTAuOSAxMS4zLTI4LjcgMC0zOS42em0tMjI3LjgtOTMuNWwxMzUuNS0xMzEuMyAxMzUuNSAxMzEuMy0xMzUuNSAxMzEuM0wyMTEuNyAzNzQuN3ptMTM1LjUtMTMxLjNsLTEzNS41IDEzMS4zLTM0LjgtMzMuOWMwLTg5LjQgMC0xOTcuNi4xLTE5Ny42bDM0LjctMzMuOSAxMzUuNSAxMzEuM3ptLTY3LjYgNjUuNGwxNy42IDE3LjYtMTcuNiAxNy42LTE3LjYtMTcuNiAxNy42LTE3LjZ6bS0xNy42IDE3LjZsLTM1LjIgMzUuMi0xNy42LTE3LjYgMzUuMi0zNS4yIDE3LjYgMTcuNnoiLz48L3N2Zz4=');
+}
+
+.data-science-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233498db"><path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-1.496 2.823 3.943-.764c.97.327 2.03.511 3.164.511 4.97 0 9-3.186 9-7.115C21 6.185 16.97 3 12 3z"/></svg>');
+}
+
+.data-mining-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjRkRCNDAwIiBkPSJNNDk2IDMySDE2QzcuMTYzIDMyIDAgMzkuMTYzIDAgNDh2NDE2YzAgOC44MzcgNy4xNjMgMTYgMTYgMTZoNDgwYzguODM3IDAgMTYtNy4xNjMgMTYtMTZWNDhjMC04LjgzNy03LjE2My0xNi0xNi0xNnptLTI0OCA0MTZIMjI0VjI3Mmg2NHYxNzZ6bTk2IDBIMzIwVjE3Nmg2NHYyNzJ6Ii8+PHBhdGggZmlsbD0iIzI2MjYyNiIgZD0iTTE2MCA0NDhIMTA0VjI3Mmg1NnYxNzZ6Ii8+PC9zdmc+');
+}
+
+.ml-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDA5RkZGIiBkPSJNMzg0IDMySDEyOEM1Ny4zMSAzMiAwIDg5LjMxIDAgMTYwdjE5MmMwIDcwLjY5IDU3LjMxIDEyOCAxMjggMTI4aDI1NmM3MC42OSAwIDEyOC01Ny4zMSAxMjgtMTI4VjE2MGMwLTcwLjY5LTU3LjMxLTEyOC0xMjgtMTI4ek0xOTIgMjU2Yy0zNS4zNSAwLTY0LTI4LjY1LTY0LTY0czI4LjY1LTY0IDY0LTY0IDY0IDI4LjY1IDY0IDY0LTI4LjY1IDY0LTY0IDY0em0xMjggMGgtNjR2LTk2aDY0djk2eiIvPjwvc3ZnPg==');
+}
+
+.dl-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjOEQ0MkMxIiBkPSJNNDQ4IDMySDE2QzcuMTY0IDMyIDAgMzkuMTY0IDAgNDh2NDE2YzAgOC44MzYgNy4xNjQgMTYgMTYgMTZoNDMyYzguODM2IDAgMTYtNy4xNjQgMTYtMTZWNDhjMC04LjgzNi03LjE2NC0xNi0xNi0xNnptLTgwIDM1MkgxNDRWMjcyaDIyNHYxMTJ6bTAtMTYwSDE0NFYxMTJoMjI0djExMnoiLz48L3N2Zz4=');
+}
+
+.responsive-icon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzQ5OERCQiIgZD0iTTQ2NCA2NEg0OGMtMjYuNSAwLTQ4IDIxLjUtNDggNDh2Mjg4YzAgMjYuNSAyMS41IDQ4IDQ4IDQ4aDQxNmMyNi41IDAgNDgtMjEuNSA0OC00OFYxMTJjMC0yNi41LTIxLjUtNDgtNDgtNDh6TTE3NiAzODRIMTQ0VjI4OGgzMnY5NnptOTYgMGgtMzJWMjg4aDMydjk2em05NiAwaC0zMlYyODhoMzJ2OTZ6Ii8+PC9zdmc+');
+}
+
+.skill-name {
+  font-weight: 600;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  
+  .hero-content h1,
+  .hero-content h2,
+  .hero-content p,
+  .hero-buttons {
+    padding-left: 0;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .hero-buttons {
+    padding-left: 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .image-placeholder {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .skill-card {
+    padding: 20px 10px;
+  }
+  
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+}
